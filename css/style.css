@@ -77,10 +77,10 @@ body {
 }
 
 .header {
-    height: 100vh;
-    background-image: url('https://via.placeholder.com/1920x1080');
+    min-height: 100vh;
+    background-image: url(../img/1.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,7 +183,7 @@ body {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -262,6 +262,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header {
+        height: 100vh;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     nav .menu {
         display: none;
     }
