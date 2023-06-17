@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 body {
     max-width: 1300px;
     margin: 0 auto;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .galeria {
@@ -22,11 +25,20 @@ nav {
     z-index: 1;
 }
 
+nav h2 {
+    margin: 0;
+    padding: 1em;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav li {
@@ -39,6 +51,14 @@ nav a {
     padding: 1em;
     text-decoration: none;
     color: #fff;
+}
+
+nav a span {
+    color: red;
+}
+
+.icon {
+    margin-right: 5em;
 }
 
 nav a:hover {
