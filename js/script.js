@@ -20,3 +20,14 @@ navbarLinks.forEach(link => {
         });
     });
 });
+
+const fadeIn = document.querySelector('.navbar');
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 250) {
+		fadeIn.style.backgroundColor = '#29323c';
+	} else {
+		fadeIn.style.backgroundColor = 'transparent';
+	}
+});
