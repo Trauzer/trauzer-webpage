@@ -281,74 +281,74 @@ body {
     nav .hamburger.active .bar:last-child {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-    
+
     .header-button:hover {
         background-color: #0069d9;
     }
-    
 
-    
-        .navbar-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-        }
-    
-        .navbar-menu li {
-            margin-left: 0;
-            margin-bottom: 1rem;
-        }
-    
-        .navbar-toggle {
-            display: block;
-        }
-    
-        .navbar-toggle span {
-            transition: transform 0.3s ease;
-        }
-    
-        .navbar-toggle.active span:first-child {
-            transform: translateY(8px) rotate(45deg);
-        }
-    
-        .navbar-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-    
-        .navbar-toggle.active span:last-child {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-    
-        .navbar-toggle.active + .navbar-menu {
-            display: block;
-        }
-    
-        .section-title {
-            font-size: 1.5rem;
-        }
-    
-        .services-container {
-            flex-wrap: wrap;
-        }
-    
-        .service {
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-    
-        .gallery-item {
-            width: calc(50% - 0.5rem);
-        }
-    
-        .form-group {
-            width: 100%;
-        }
-    
+
+
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-toggle span {
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-toggle.active span:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:last-child {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar-toggle.active+.navbar-menu {
+        display: block;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .services-container {
+        flex-wrap: wrap;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .gallery-item {
+        width: calc(50% - 0.5rem);
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
     nav .hamburger.active .bar {
         margin: 0;
     }
