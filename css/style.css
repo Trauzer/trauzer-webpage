@@ -1,195 +1,391 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    max-width: 1300px;
-    margin: 0 auto;
-    text-align: center;
+    margin: auto;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 1300px;
 }
 
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-/* fix width of nav panel, it should be matching the width of the body */
-
-nav { 
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
-nav h2 {
-    margin: 0;
-    padding: 1em;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5rem;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-nav ul {
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1rem;
+}
+
+.navbar-menu li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #007bff;
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+.header {
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1920x1080');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-nav li {
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
+.header-container {
+    text-align: center;
     color: #fff;
 }
 
-nav a span {
-    color: red;
+.header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
-.icon {
-    margin-right: 5em;
+.header-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
-nav a:hover {
-    background-color: #666;
+.header-button {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-/* implement it correctly, for now put it at the bottom of the page to take care of later */
+.navbar-toggle span:last-child {
+    margin-bottom: 0;
+}
 
-/* Desktop */
+.section {
+    padding: 4rem 0;
+}
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-content {
     max-width: 1300px;
     margin: 0 auto;
 }
 
-.column {
-    flex-basis: calc(50% - 1em)
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Mobile */
-
-@media screen and (max-width: 768px) {
-
-    .container {
-        flex-direction: column;
-    }   
-
-    .column {
-        flex-basis: 100%;
-    }
-
-    /* Responsive navigation */
-
-    .nav {
-        display: none;
-    }
-
-    /* ????? */
-
-    .burger {
-        display:block
-    }
-
-    .burger-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        padding: 1em
-    }
-
-    .burger-menu a {
-        display: block;
-        padding: 1em;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .burger-menu a:hover {
-        background-color: #666;
-    }
-    
-    .burger:checked ~ .burger-menu {
-        display: block;
-    }
-
-        /* Responsive font sizes */
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 0.5em 1em;
-    }
+.service {
+    width: calc(33.33% - 1rem);
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Next things to implement correctly, for now leave it as it is */
-
-html {
-    scroll-behavior: smooth;
+.service:hover {
+    transform: translateY(-5px);
 }
 
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    border: none;
-    border-radius: 0.5em;
-    transition: background-color 0.2s ease-in-out;
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-button:hover {
-    background-color: #666;
+.service-description {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
-button:focus {
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: calc(25% - 1rem);
+    margin-bottom: 2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: calc(50% - 0.5rem);
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
-    background-color: #666;
+    border-color: #007bff;
 }
 
-@keyframes slide-in {
-    from {
-        transform: translateX(-100%);
+.form-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.form-group label[for="consent"] {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.form-button {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-right: 1rem;
+}
+
+.form-button:hover {
+    background-color: #0069d9;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
     }
-    to {
-        transform: translateX(0);
+
+    nav .hamburger {
+        display: block;
+    }
+
+    nav .hamburger.active .bar:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    nav .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav .hamburger.active .bar:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    .header-button:hover {
+        background-color: #0069d9;
+    }
+    
+
+    
+        .navbar-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+    
+        .navbar-menu li {
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+    
+        .navbar-toggle {
+            display: block;
+        }
+    
+        .navbar-toggle span {
+            transition: transform 0.3s ease;
+        }
+    
+        .navbar-toggle.active span:first-child {
+            transform: translateY(8px) rotate(45deg);
+        }
+    
+        .navbar-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .navbar-toggle.active span:last-child {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    
+        .navbar-toggle.active + .navbar-menu {
+            display: block;
+        }
+    
+        .section-title {
+            font-size: 1.5rem;
+        }
+    
+        .services-container {
+            flex-wrap: wrap;
+        }
+    
+        .service {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    
+        .gallery-item {
+            width: calc(50% - 0.5rem);
+        }
+    
+        .form-group {
+            width: 100%;
+        }
+    
+    nav .hamburger.active .bar {
+        margin: 0;
+    }
+
+    nav .hamburger.active {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+
+    nav .hamburger.active~.menu {
+        display: block;
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav .hamburger.active~.menu li {
+        margin: 10px 0;
+    }
+
+    nav .hamburger.active~.menu li:first-child {
+        margin-top: 0;
+    }
+
+    nav .hamburger.active~.menu li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav .hamburger.active~.menu li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
     }
 }
-
-section {
-    animation: slide-in 0.5s ease-in-out;
-}
-
-section {
-    background-image: url(../img/hero.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
